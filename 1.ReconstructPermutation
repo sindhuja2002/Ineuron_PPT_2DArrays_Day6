@@ -1,0 +1,23 @@
+#question 1
+def reconstructPermutation(s):
+    perm = []
+    n = len(s)
+    low, high = 0, n
+    
+    for ch in s:
+        if ch == 'I':
+            perm.append(low)
+            low += 1
+        else:  # ch == 'D'
+            perm.append(high)
+            high -= 1
+    
+    perm.append(low)  # or perm.append(high)
+    return perm
+    
+s = "IDID"
+reconstructed_perm = reconstructPermutation(s)
+print(reconstructed_perm)
+
+#TC - O(n)
+#SC - O(n)
