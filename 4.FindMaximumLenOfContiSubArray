@@ -1,0 +1,24 @@
+#question 4
+def findMaxLength(nums):
+    max_length = 0
+    count = 0
+    sum_counts = {0: -1}
+
+    for i in range(len(nums)):
+        if nums[i] == 0:
+            count -= 1
+        else:
+            count += 1
+
+        if count in sum_counts:
+            max_length = max(max_length, i - sum_counts[count])
+        else:
+            sum_counts[count] = i
+
+    return max_length
+
+nums = [0, 1]
+print(findMaxLength(nums))
+
+#TC - O(n)
+#SC - O(n)
