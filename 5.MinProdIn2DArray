@@ -1,0 +1,16 @@
+#question 5
+def minProductSum(nums1, nums2):
+    nums1.sort()  # Sort nums1 in ascending order
+    nums2.sort(reverse=True)  # Sort nums2 in descending order
+    
+    n = len(nums1)
+    product_sum = sum(nums1[i] * nums2[i] for i in range(n))
+    
+    return product_sum
+
+nums1 = [5, 3, 4, 2]
+nums2 = [4, 2, 2, 5]
+print(minProductSum(nums1, nums2))
+
+#TC - O(nlogn)-----sorting array
+#SC - O(1)
